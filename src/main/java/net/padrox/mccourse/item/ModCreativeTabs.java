@@ -28,6 +28,11 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
                         output.accept(ModBlocks.SOUND_BLOCK.get());
 
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_STAIRS.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_SLAB.get());
+                        output.accept(ModBlocks.ALEXANDRITE_STAIRS.get());
+                        output.accept(ModBlocks.ALEXANDRITE_SLAB.get());
+
                         output.accept(ModBlocks.ALEXANDRITE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
                         output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());

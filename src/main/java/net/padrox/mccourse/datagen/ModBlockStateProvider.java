@@ -1,5 +1,9 @@
 package net.padrox.mccourse.datagen;
 
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.padrox.mccourse.MCCourseMod;
 import net.padrox.mccourse.block.ModBlocks;
 import net.minecraft.data.PackOutput;
@@ -24,6 +28,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NETHER_ALEXANDRITE_ORE);
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
+
+        stairsBlock((StairBlock) ModBlocks.RAW_ALEXANDRITE_STAIRS.get(), blockTexture(ModBlocks.RAW_ALEXANDRITE_BLOCK.get()));
+        slabBlock(((SlabBlock) ModBlocks.RAW_ALEXANDRITE_SLAB.get()), blockTexture(ModBlocks.RAW_ALEXANDRITE_BLOCK.get()), blockTexture(ModBlocks.RAW_ALEXANDRITE_BLOCK.get()));
+        stairsBlock((StairBlock) ModBlocks.ALEXANDRITE_STAIRS.get(), blockTexture(ModBlocks.ALEXANDRITE_BLOCK.get()));
+        slabBlock(((SlabBlock) ModBlocks.ALEXANDRITE_SLAB.get()), blockTexture(ModBlocks.ALEXANDRITE_BLOCK.get()), blockTexture(ModBlocks.ALEXANDRITE_BLOCK.get()));
+
+        blockItem(ModBlocks.RAW_ALEXANDRITE_STAIRS);
+        blockItem(ModBlocks.RAW_ALEXANDRITE_SLAB);
+        blockItem(ModBlocks.ALEXANDRITE_STAIRS);
+        blockItem(ModBlocks.ALEXANDRITE_SLAB);
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile("mccourse:block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

@@ -16,6 +16,11 @@
   "block.mccourse.nether_alexandrite_ore": "Nether Alexandrite Ore",
   "block.mccourse.end_alexandrite_ore": "End Alexandrite Ore",
 
+  "block.mccourse.raw_alexandrite_stairs": "Raw Alexandrite Stairs",
+  "block.mccourse.raw_alexandrite_slab": "Raw Alexandrite Slab",
+  "block.mccourse.alexandrite_stairs": "Alexandrite Stairs",
+  "block.mccourse.alexandrite_slab": "Alexandrite Slab",
+
   "item.mccourse.metal_detector.no_valuables": "No valuables found!",
 
   "tooltip.mccourse.metal_detector.shift": "Right Click on Blocks to find Valuables!",

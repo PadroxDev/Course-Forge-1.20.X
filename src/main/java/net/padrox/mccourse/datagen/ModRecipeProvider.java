@@ -31,6 +31,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "mccourse:alexandrite_gem", "alexandrite", "mccourse:alexandrite_block", "alexandrite");
         oreSmelting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE_GEM.get(), 0.25f, 200, "alexandrite");
         oreBlasting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE_GEM.get(), 0.25f, 100, "alexandrite");
+
+        stairs(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_STAIRS.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+        slab(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_SLAB.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+        stairs(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_STAIRS.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
+        slab(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_SLAB.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -52,6 +57,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(pFinishedRecipeConsumer, MCCourseMod.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
+    }
 
+    protected static void stairs(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pStairs, ItemLike pMaterial) {
+        stairBuilder(pCategory, pStairs, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder stairBuilder(RecipeCategory pCategory, ItemLike pStairs, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(pCategory, pStairs, 4).define('#', pMaterial).pattern("#  ").pattern("## ").pattern("###");
+    }
+
+    protected static void slab(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pSlab, ItemLike pMaterial) {
+        slabBuilder(pCategory, pSlab, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
     }
 }
