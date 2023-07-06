@@ -20,9 +20,24 @@ public class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
                         output.accept(ModItems.ALEXANDRITE_GEM.get());
+                        output.accept(ModItems.PURIFIED_ALEXANDRITE_GEM.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.PEAT_BRICK.get());
+
+                        output.accept(ModItems.ALEXANDRITE_SWORD.get());
+                        output.accept(ModItems.HEAVENS_BLADE.get());
+                        output.accept(ModItems.ALEXANDRITE_PICKAXE.get());
+                        output.accept(ModItems.ALEXANDRITE_AXE.get());
+                        output.accept(ModItems.ALEXANDRITE_SHOVEL.get());
+                        output.accept(ModItems.ALEXANDRITE_HOE.get());
+                        output.accept(ModItems.ALEXANDRITE_PAXEL.get());
+                        output.accept(ModItems.ALEXANDRITE_HAMMER.get());
+
+                        output.accept(ModItems.ALEXANDRITE_HELMET.get());
+                        output.accept(ModItems.ALEXANDRITE_CHESTPLATE.get());
+                        output.accept(ModItems.ALEXANDRITE_LEGGINS.get());
+                        output.accept(ModItems.ALEXANDRITE_BOOTS.get());
 
                         output.accept(ModBlocks.SOUND_BLOCK.get());
 

@@ -1,12 +1,25 @@
-// 1.20.1	2023-07-06T16:26:45.9678063	Item Models: mccourse
+// 1.20.1	2023-07-06T19:57:33.2389484	Item Models: mccourse
+2708264e5c6062ce8fed21db45430ddac33ffa5c assets/mccourse/models/item/alexandrite_axe.json
+81a1e87c000330511a9b145e7951600d6922af72 assets/mccourse/models/item/alexandrite_boots.json
 cfc705788577468640df77a99d391497448608d0 assets/mccourse/models/item/alexandrite_button.json
+2a9f4edeb8f169346a9fc18f7ef92c1301d54814 assets/mccourse/models/item/alexandrite_chestplate.json
 b8e1cf935d31db078f2d1b9f2a85a226774bb2a6 assets/mccourse/models/item/alexandrite_door.json
 baa0c13ac61011d19305b6ac539291971b668c8c assets/mccourse/models/item/alexandrite_fence.json
 5496edc2f464f7d1dbe1d95995ce83840c905980 assets/mccourse/models/item/alexandrite_gem.json
+c6877a462ee5e94b0dc7583818f058cedccf54eb assets/mccourse/models/item/alexandrite_hammer.json
+b042fcedcf52a7f582a6e24e075861ab0b4225ed assets/mccourse/models/item/alexandrite_helmet.json
+fc9a2b04d13ded16522c28312bc4d5fd93ba47fe assets/mccourse/models/item/alexandrite_hoe.json
+61eb27bcc1b704be274f010b7ce23f1cf5325f79 assets/mccourse/models/item/alexandrite_leggings.json
+0cc797b0bbb477ddb6a2d33ddf28cdf737d82586 assets/mccourse/models/item/alexandrite_paxel.json
+e5ff91a4c82eff3f90e101d271cd2cadd04fdab1 assets/mccourse/models/item/alexandrite_pickaxe.json
+d7e3fd08979fe3c1c55c99799913461186f0b41b assets/mccourse/models/item/alexandrite_shovel.json
+cc4ab4468ea9d286c8feaf44809a99228b853eb5 assets/mccourse/models/item/alexandrite_sword.json
 38463792de822a6f202140dd5282e260ad9f6ac4 assets/mccourse/models/item/alexandrite_wall.json
+9820fadd390da524b9130743774004e06d92904d assets/mccourse/models/item/heavens_blade.json
 6349d1adee80001ce5a46b787665a782e5c25798 assets/mccourse/models/item/kohlrabi.json
 23f99234f647aa805541635819a0a2a8b1552d81 assets/mccourse/models/item/metal_detector.json
 69f14bc527b8fd908153ba18e4c2e2a0b027fa4f assets/mccourse/models/item/peat_brick.json
+98e13bf01b88aa6a830f5585451ea2703fa4fa06 assets/mccourse/models/item/purified_alexandrite_gem.json
 d890745bc92e5639d4db062935218a0ef60c01fa assets/mccourse/models/item/raw_alexandrite.json
 82f2d3721e58f63cd2c52f71dd3a7a66b41184c0 assets/mccourse/models/item/raw_alexandrite_button.json
 44b5e74791050c1c1c6fbbfa5602b385082c6433 assets/mccourse/models/item/raw_alexandrite_door.json

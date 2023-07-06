@@ -1,7 +1,9 @@
 package net.padrox.mccourse.datagen;
 
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -32,6 +34,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE_GEM.get(), 0.25f, 200, "alexandrite");
         oreBlasting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE_GEM.get(), 0.25f, 100, "alexandrite");
 
+        sword(pWriter, ModItems.ALEXANDRITE_SWORD.get(), ModItems.ALEXANDRITE_GEM.get());
+        pickaxe(pWriter, ModItems.ALEXANDRITE_PICKAXE.get(), ModItems.ALEXANDRITE_GEM.get());
+        axe(pWriter, ModItems.ALEXANDRITE_AXE.get(), ModItems.ALEXANDRITE_GEM.get());
+        shovel(pWriter, ModItems.ALEXANDRITE_SHOVEL.get(), ModItems.ALEXANDRITE_GEM.get());
+        hoe(pWriter, ModItems.ALEXANDRITE_HOE.get(), ModItems.ALEXANDRITE_GEM.get());
+        paxel(pWriter, ModItems.ALEXANDRITE_PAXEL.get(), ModItems.ALEXANDRITE_AXE.get(), ModItems.ALEXANDRITE_SHOVEL.get(),
+                ModItems.ALEXANDRITE_PICKAXE.get(), Items.STICK, ModItems.ALEXANDRITE_GEM.get());
+        hammer(pWriter, ModItems.ALEXANDRITE_HAMMER.get(), ModItems.ALEXANDRITE_GEM.get());
+
         stairs(pWriter, ModBlocks.RAW_ALEXANDRITE_STAIRS.get(), ModItems.RAW_ALEXANDRITE.get());
         slab(pWriter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_ALEXANDRITE_SLAB.get(), ModItems.RAW_ALEXANDRITE.get());
         stairs(pWriter, ModBlocks.ALEXANDRITE_STAIRS.get(), ModItems.ALEXANDRITE_GEM.get());
@@ -53,6 +64,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoor(pWriter, ModBlocks.RAW_ALEXANDRITE_TRAPDOOR.get(), ModItems.RAW_ALEXANDRITE.get());
         door(pWriter, ModBlocks.ALEXANDRITE_DOOR.get(), ModItems.ALEXANDRITE_GEM.get());
         trapdoor(pWriter, ModBlocks.ALEXANDRITE_TRAPDOOR.get(), ModItems.ALEXANDRITE_GEM.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HEAVENS_BLADE.get())
+                .define('I', Items.BLAZE_ROD)
+                .define('F', Items.FEATHER)
+                .define('G', ModItems.PURIFIED_ALEXANDRITE_GEM.get())
+                .define('A', ModItems.ALEXANDRITE_GEM.get())
+                .pattern(" A ")
+                .pattern("FGF")
+                .pattern(" I ")
+                .unlockedBy("has_purified_alexandrite_gem", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.PURIFIED_ALEXANDRITE_GEM.get()).build()))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -106,5 +129,85 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static RecipeBuilder ironTrapdoorBuilder(ItemLike pTrapdoor, Ingredient pMaterial) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, pTrapdoor).define('#', pMaterial).pattern("##").pattern("##");
+    }
+
+    protected static void sword(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pSword, ItemLike pMaterial) {
+        swordBuilder(pSword, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder swordBuilder(ItemLike pSword, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, pSword).define('#', pMaterial).define('I', Items.STICK)
+                .pattern(" # ")
+                .pattern(" # ")
+                .pattern(" I ");
+    }
+
+    protected static void pickaxe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pPickaxe, ItemLike pMaterial) {
+        pickaxeBuilder(pPickaxe, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder pickaxeBuilder(ItemLike pPickaxe, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pPickaxe).define('#', pMaterial).define('I', Items.STICK)
+                .pattern("###")
+                .pattern(" I ")
+                .pattern(" I ");
+    }
+
+    protected static void axe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pAxe, ItemLike pMaterial) {
+        axeBuilder(pAxe, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder axeBuilder(ItemLike pAxe, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pAxe).define('#', pMaterial).define('I', Items.STICK)
+                .pattern(" ##")
+                .pattern(" I#")
+                .pattern(" I ");
+    }
+
+    protected static void shovel(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pShovel, ItemLike pMaterial) {
+        shovelBuilder(pShovel, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+    protected static RecipeBuilder shovelBuilder(ItemLike pShovel, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pShovel).define('#', pMaterial).define('I', Items.STICK)
+                .pattern(" # ")
+                .pattern(" I ")
+                .pattern(" I ");
+    }
+
+    protected static void hoe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pHoe, ItemLike pMaterial) {
+        hoeBuilder(pHoe, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder hoeBuilder(ItemLike pHoe, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pHoe).define('#', pMaterial).define('I', Items.STICK)
+                .pattern(" ##")
+                .pattern(" I ")
+                .pattern(" I ");
+    }
+
+    protected static void paxel(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pPaxel, ItemLike pAxeComponent, ItemLike pShovelComponent, ItemLike pPickaxeComponent, ItemLike pBase, ItemLike pMaterial) {
+        paxelBuilder(pPaxel, pAxeComponent, pShovelComponent, pPickaxeComponent, pBase).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder paxelBuilder(ItemLike pPaxel, ItemLike pAxeComponent, ItemLike pShovelComponent, ItemLike pPickaxeComponent, ItemLike pBase) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pPaxel)
+                .define('I', pBase)
+                .define('A', pAxeComponent)
+                .define('S', pShovelComponent)
+                .define('P', pPickaxeComponent)
+                .pattern("ASP")
+                .pattern(" I ")
+                .pattern(" I ");
+    }
+
+    protected static void hammer(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pHammer, ItemLike pMaterial) {
+        hammerBuilder(pHammer, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder hammerBuilder(ItemLike pHammer, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pHammer).define('#', pMaterial).define('I', Items.STICK)
+                .pattern("###")
+                .pattern("###")
+                .pattern(" I ");
     }
 }

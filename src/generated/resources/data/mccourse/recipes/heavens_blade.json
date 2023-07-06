@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "mccourse:alexandrite_gem"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "G": {
+      "item": "mccourse:purified_alexandrite_gem"
+    },
+    "I": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    " A ",
+    "FGF",
+    " I "
+  ],
+  "result": {
+    "item": "mccourse:heavens_blade"
+  },
+  "show_notification": true
+}

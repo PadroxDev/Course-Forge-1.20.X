@@ -20,12 +20,27 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.ALEXANDRITE_GEM);
         simpleItem(ModItems.RAW_ALEXANDRITE);
+        simpleItem(ModItems.ALEXANDRITE_GEM);
+        simpleItem(ModItems.PURIFIED_ALEXANDRITE_GEM);
 
         simpleItem(ModItems.KOHLRABI);
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.PEAT_BRICK);
+
+        handheldItem(ModItems.ALEXANDRITE_SWORD);
+        handheldItem(ModItems.HEAVENS_BLADE);
+        handheldItem(ModItems.ALEXANDRITE_PICKAXE);
+        handheldItem(ModItems.ALEXANDRITE_AXE);
+        handheldItem(ModItems.ALEXANDRITE_SHOVEL);
+        handheldItem(ModItems.ALEXANDRITE_HOE);
+        handheldItem(ModItems.ALEXANDRITE_PAXEL);
+        handheldItem(ModItems.ALEXANDRITE_HAMMER);
+
+        simpleItem(ModItems.ALEXANDRITE_HELMET);
+        simpleItem(ModItems.ALEXANDRITE_CHESTPLATE);
+        simpleItem(ModItems.ALEXANDRITE_LEGGINS);
+        simpleItem(ModItems.ALEXANDRITE_BOOTS);
 
         buttonItem(ModBlocks.RAW_ALEXANDRITE_BUTTON, ModBlocks.RAW_ALEXANDRITE_BLOCK);
         buttonItem(ModBlocks.ALEXANDRITE_BUTTON, ModBlocks.ALEXANDRITE_BLOCK);
@@ -52,6 +67,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
                 .texture("texture",  new ResourceLocation(MCCourseMod.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(MCCourseMod.MOD_ID,"item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {

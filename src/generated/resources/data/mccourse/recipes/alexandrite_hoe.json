@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "mccourse:alexandrite_gem"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " ##",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "item": "mccourse:alexandrite_hoe"
+  },
+  "show_notification": true
+}
