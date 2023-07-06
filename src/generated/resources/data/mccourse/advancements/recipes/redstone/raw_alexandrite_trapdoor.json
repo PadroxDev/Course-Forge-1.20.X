@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_alexandrite_block": {
+    "has_raw_alexandrite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mccourse:raw_alexandrite_block"
+              "mccourse:raw_alexandrite"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:raw_alexandrite_slab"
+        "recipe": "mccourse:raw_alexandrite_trapdoor"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_raw_alexandrite_block",
+      "has_raw_alexandrite",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mccourse:raw_alexandrite_slab"
+      "mccourse:raw_alexandrite_trapdoor"
     ]
   },
   "sends_telemetry_event": false

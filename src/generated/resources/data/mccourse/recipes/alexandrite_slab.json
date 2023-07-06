@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
-      "item": "mccourse:alexandrite_block"
+      "item": "mccourse:alexandrite_gem"
     }
   },
   "pattern": [

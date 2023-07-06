@@ -10,6 +10,16 @@
     "mccourse:raw_alexandrite_stairs",
     "mccourse:raw_alexandrite_slab",
     "mccourse:alexandrite_stairs",
-    "mccourse:alexandrite_slab"
+    "mccourse:alexandrite_slab",
+    "mccourse:raw_alexandrite_pressure_plate",
+    "mccourse:raw_alexandrite_button",
+    "mccourse:alexandrite_pressure_plate",
+    "mccourse:alexandrite_button",
+    "mccourse:raw_alexandrite_fence",
+    "mccourse:raw_alexandrite_fence_gate",
+    "mccourse:raw_alexandrite_wall",
+    "mccourse:alexandrite_fence",
+    "mccourse:alexandrite_fence_gate",
+    "mccourse:alexandrite_wall"
   ]
 }

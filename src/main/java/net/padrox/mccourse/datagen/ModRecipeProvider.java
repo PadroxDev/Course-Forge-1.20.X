@@ -32,10 +32,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE_GEM.get(), 0.25f, 200, "alexandrite");
         oreBlasting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE_GEM.get(), 0.25f, 100, "alexandrite");
 
-        stairs(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_STAIRS.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
-        slab(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_SLAB.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
-        stairs(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_STAIRS.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
-        slab(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_SLAB.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
+        stairs(pWriter, ModBlocks.RAW_ALEXANDRITE_STAIRS.get(), ModItems.RAW_ALEXANDRITE.get());
+        slab(pWriter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_ALEXANDRITE_SLAB.get(), ModItems.RAW_ALEXANDRITE.get());
+        stairs(pWriter, ModBlocks.ALEXANDRITE_STAIRS.get(), ModItems.ALEXANDRITE_GEM.get());
+        slab(pWriter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ALEXANDRITE_SLAB.get(), ModItems.ALEXANDRITE_GEM.get());
+
+        pressurePlate(pWriter, ModBlocks.RAW_ALEXANDRITE_PRESSURE_PLATE.get(), ModItems.RAW_ALEXANDRITE.get());
+        button(pWriter, ModBlocks.RAW_ALEXANDRITE_BUTTON.get(), ModItems.RAW_ALEXANDRITE.get());
+        pressurePlate(pWriter, ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get(), ModItems.ALEXANDRITE_GEM.get());
+        button(pWriter, ModBlocks.ALEXANDRITE_BUTTON.get(), ModItems.ALEXANDRITE_GEM.get());
+
+        fence(pWriter, ModBlocks.RAW_ALEXANDRITE_FENCE.get(), ModItems.RAW_ALEXANDRITE.get());
+        fenceGate(pWriter, ModBlocks.RAW_ALEXANDRITE_FENCE_GATE.get(), ModItems.RAW_ALEXANDRITE.get());
+        wall(pWriter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RAW_ALEXANDRITE_WALL.get(), ModItems.RAW_ALEXANDRITE.get());
+        fence(pWriter, ModBlocks.ALEXANDRITE_FENCE.get(), ModItems.ALEXANDRITE_GEM.get());
+        fenceGate(pWriter, ModBlocks.ALEXANDRITE_FENCE_GATE.get(), ModItems.ALEXANDRITE_GEM.get());
+        wall(pWriter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ALEXANDRITE_WALL.get(), ModItems.ALEXANDRITE_GEM.get());
+
+        door(pWriter, ModBlocks.RAW_ALEXANDRITE_DOOR.get(), ModItems.RAW_ALEXANDRITE.get());
+        trapdoor(pWriter, ModBlocks.RAW_ALEXANDRITE_TRAPDOOR.get(), ModItems.RAW_ALEXANDRITE.get());
+        door(pWriter, ModBlocks.ALEXANDRITE_DOOR.get(), ModItems.ALEXANDRITE_GEM.get());
+        trapdoor(pWriter, ModBlocks.ALEXANDRITE_TRAPDOOR.get(), ModItems.ALEXANDRITE_GEM.get());
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
@@ -59,15 +76,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
     }
 
-    protected static void stairs(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pStairs, ItemLike pMaterial) {
-        stairBuilder(pCategory, pStairs, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
-    }
-
-    protected static RecipeBuilder stairBuilder(RecipeCategory pCategory, ItemLike pStairs, Ingredient pMaterial) {
-        return ShapedRecipeBuilder.shaped(pCategory, pStairs, 4).define('#', pMaterial).pattern("#  ").pattern("## ").pattern("###");
+    protected static void stairs(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pStairs, ItemLike pMaterial) {
+        stairBuilder(pStairs, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
     }
 
     protected static void slab(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pSlab, ItemLike pMaterial) {
         slabBuilder(pCategory, pSlab, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static void button(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pButton, ItemLike pMaterial) {
+        buttonBuilder(pButton, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static void fence(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pFence, ItemLike pMaterial) {
+        fenceBuilder(pFence, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static void fenceGate(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pFenceGate, ItemLike pMaterial) {
+        fenceGateBuilder(pFenceGate, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static void door(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pDoor, ItemLike pMaterial) {
+        doorBuilder(pDoor, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static void trapdoor(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pTrapdoor, ItemLike pMaterial) {
+        ironTrapdoorBuilder(pTrapdoor, Ingredient.of(pMaterial)).unlockedBy(getHasName(pMaterial), has(pMaterial)).save(pFinishedRecipeConsumer);
+    }
+
+    protected static RecipeBuilder ironTrapdoorBuilder(ItemLike pTrapdoor, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, pTrapdoor).define('#', pMaterial).pattern("##").pattern("##");
     }
 }

@@ -62,7 +62,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.RAW_ALEXANDRITE_STAIRS.get(),
                         ModBlocks.RAW_ALEXANDRITE_SLAB.get(),
                         ModBlocks.ALEXANDRITE_STAIRS.get(),
-                        ModBlocks.ALEXANDRITE_SLAB.get()
+                        ModBlocks.ALEXANDRITE_SLAB.get(),
+                        ModBlocks.RAW_ALEXANDRITE_PRESSURE_PLATE.get(),
+                        ModBlocks.RAW_ALEXANDRITE_BUTTON.get(),
+                        ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get(),
+                        ModBlocks.ALEXANDRITE_BUTTON.get(),
+                        ModBlocks.RAW_ALEXANDRITE_FENCE.get(),
+                        ModBlocks.RAW_ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.RAW_ALEXANDRITE_WALL.get(),
+                        ModBlocks.ALEXANDRITE_FENCE.get(),
+                        ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.ALEXANDRITE_WALL.get()
                 );
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
@@ -77,7 +87,33 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.RAW_ALEXANDRITE_STAIRS.get(),
                         ModBlocks.RAW_ALEXANDRITE_SLAB.get(),
                         ModBlocks.ALEXANDRITE_STAIRS.get(),
-                        ModBlocks.ALEXANDRITE_SLAB.get()
+                        ModBlocks.ALEXANDRITE_SLAB.get(),
+                        ModBlocks.RAW_ALEXANDRITE_PRESSURE_PLATE.get(),
+                        ModBlocks.RAW_ALEXANDRITE_BUTTON.get(),
+                        ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get(),
+                        ModBlocks.ALEXANDRITE_BUTTON.get(),
+                        ModBlocks.RAW_ALEXANDRITE_FENCE.get(),
+                        ModBlocks.RAW_ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.RAW_ALEXANDRITE_WALL.get(),
+                        ModBlocks.ALEXANDRITE_FENCE.get(),
+                        ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.ALEXANDRITE_WALL.get()
+                );
+
+        this.tag(BlockTags.FENCES)
+                .add(
+                        ModBlocks.RAW_ALEXANDRITE_FENCE.get(),
+                        ModBlocks.ALEXANDRITE_FENCE.get()
+                );
+        this.tag(BlockTags.FENCE_GATES)
+                .add(
+                        ModBlocks.RAW_ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.ALEXANDRITE_FENCE_GATE.get()
+                );
+        this.tag(BlockTags.WALLS)
+                .add(
+                        ModBlocks.RAW_ALEXANDRITE_WALL.get(),
+                        ModBlocks.ALEXANDRITE_WALL.get()
                 );
     }
 

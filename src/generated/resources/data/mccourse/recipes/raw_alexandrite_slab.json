@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
-      "item": "mccourse:raw_alexandrite_block"
+      "item": "mccourse:raw_alexandrite"
     }
   },
   "pattern": [

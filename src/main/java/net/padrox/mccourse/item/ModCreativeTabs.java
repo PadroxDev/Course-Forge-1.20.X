@@ -24,19 +24,37 @@ public class ModCreativeTabs {
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.PEAT_BRICK.get());
 
+                        output.accept(ModBlocks.SOUND_BLOCK.get());
+
                         output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
                         output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
-                        output.accept(ModBlocks.SOUND_BLOCK.get());
+
+                        output.accept(ModBlocks.ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.END_ALEXANDRITE_ORE.get());
 
                         output.accept(ModBlocks.RAW_ALEXANDRITE_STAIRS.get());
                         output.accept(ModBlocks.RAW_ALEXANDRITE_SLAB.get());
                         output.accept(ModBlocks.ALEXANDRITE_STAIRS.get());
                         output.accept(ModBlocks.ALEXANDRITE_SLAB.get());
 
-                        output.accept(ModBlocks.ALEXANDRITE_ORE.get());
-                        output.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
-                        output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
-                        output.accept(ModBlocks.END_ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_BUTTON.get());
+                        output.accept(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
+
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_FENCE.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_FENCE_GATE.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_WALL.get());
+                        output.accept(ModBlocks.ALEXANDRITE_FENCE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_WALL.get());
+
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_DOOR.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_TRAPDOOR.get());
+                        output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
+                        output.accept(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

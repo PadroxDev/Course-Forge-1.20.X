@@ -21,6 +21,23 @@
   "block.mccourse.alexandrite_stairs": "Alexandrite Stairs",
   "block.mccourse.alexandrite_slab": "Alexandrite Slab",
 
+  "block.mccourse.raw_alexandrite_pressure_plate": "Raw Alexandrite Pressure Plate",
+  "block.mccourse.raw_alexandrite_button": "Raw Alexandrite Button",
+  "block.mccourse.alexandrite_pressure_plate": "Alexandrite Pressure Plate",
+  "block.mccourse.alexandrite_button": "Alexandrite Button",
+
+  "block.mccourse.raw_alexandrite_fence": "Raw Alexandrite Fence",
+  "block.mccourse.raw_alexandrite_fence_gate": "Raw Alexandrite Fence Gate",
+  "block.mccourse.raw_alexandrite_wall": "Raw Alexandrite Wall",
+  "block.mccourse.alexandrite_fence": "Alexandrite Fence",
+  "block.mccourse.alexandrite_fence_gate": "Alexandrite Fence Gate",
+  "block.mccourse.alexandrite_wall": "Alexandrite Wall",
+
+  "block.mccourse.raw_alexandrite_door": "Raw Alexandrite Door",
+  "block.mccourse.raw_alexandrite_trapdoor": "Raw Alexandrite Trapdoor",
+  "block.mccourse.alexandrite_door": "Alexandrite Door",
+  "block.mccourse.alexandrite_trapdoor": "Alexandrite Trapdoor",
+
   "item.mccourse.metal_detector.no_valuables": "No valuables found!",
 
   "tooltip.mccourse.metal_detector.shift": "Right Click on Blocks to find Valuables!",
