@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-06T19:12:49.8715192	Recipes
+// 1.20.1	2023-07-10T18:46:06.2309183	Recipes
 38b88dd43988cdcd63555f5e9ad36a4ee49c50e0 data/mccourse/advancements/recipes/building_blocks/alexandrite_slab.json
 aa493901075a54c8bbf03c35e34fe8687ad4c3c8 data/mccourse/advancements/recipes/building_blocks/alexandrite_stairs.json
 d493187b09cd3f162a91ac138c9e050c9a26f336 data/mccourse/advancements/recipes/building_blocks/alexandrite_wall.json
@@ -8,6 +8,7 @@ b43eb1bbcb930dca508cc5c2a3912bbe3703b9fd data/mccourse/advancements/recipes/buil
 dc3f5d614ef2cd08f1779b78c30a55516253fe0e data/mccourse/advancements/recipes/combat/alexandrite_sword.json
 e72e7caffc519ead4fa0b0688a90b0f0019de900 data/mccourse/advancements/recipes/combat/heavens_blade.json
 61ff2769f31b04995ffc3c45c02b5f174070303a data/mccourse/advancements/recipes/decorations/alexandrite_fence.json
+556acb0869a902b58a1bfa84f1e54e4ce3063104 data/mccourse/advancements/recipes/decorations/alexandrite_lamp.json
 d18de288e332eb52f3a55e5355ff4d428e04148b data/mccourse/advancements/recipes/decorations/raw_alexandrite_fence.json
 4fabeb55f63b67e7da2c6d5aee78a9dd37da6903 data/mccourse/advancements/recipes/misc/alexandrite_block.json
 c8b2900ff62ad2dbee9c7b19f46f3bffacbf2370 data/mccourse/advancements/recipes/misc/alexandrite_gem.json
@@ -58,6 +59,7 @@ d8dc97fa95204b8ac43e400d8d5a5e5c79d3f0ff data/mccourse/recipes/alexandrite_gem_f
 b5ff29191803f122095a33ee7d9f96f4fc5bb8da data/mccourse/recipes/alexandrite_gem_from_smelting_raw_alexandrite.json
 65c1f46497c9380a68f9d8406a3c9360c888858b data/mccourse/recipes/alexandrite_hammer.json
 b53a6e16a3dd3b42215e1b0ec4648606b0b28f09 data/mccourse/recipes/alexandrite_hoe.json
+795ce1a93b59d380d8cbe4607dceb15e6898ce98 data/mccourse/recipes/alexandrite_lamp.json
 ed198e2695b91678a2a7c641989df7eef777eb1c data/mccourse/recipes/alexandrite_paxel.json
 85a535f8bc937c7af3321f3360c5ce33995707fa data/mccourse/recipes/alexandrite_pickaxe.json
 02dce7713b267e4f1faf3c0168ef2e5c09e178bd data/mccourse/recipes/alexandrite_pressure_plate.json

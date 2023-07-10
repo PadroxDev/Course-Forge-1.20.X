@@ -22,6 +22,8 @@
   "item.mccourse.alexandrite_leggings": "Alexandrite Leggings",
   "item.mccourse.alexandrite_boots": "Alexandrite Boots",
 
+  "item.mccourse.alexandrite_horse_armor": "Alexandrite Horse Armor",
+
   "block.mccourse.alexandrite_block": "Alexandrite Block",
   "block.mccourse.raw_alexandrite_block": "Raw Alexandrite Block",
   "block.mccourse.sound_block": "Sound Block",
@@ -52,6 +54,10 @@
   "block.mccourse.raw_alexandrite_trapdoor": "Raw Alexandrite Trapdoor",
   "block.mccourse.alexandrite_door": "Alexandrite Door",
   "block.mccourse.alexandrite_trapdoor": "Alexandrite Trapdoor",
+
+  "block.mccourse.alexandrite_lamp": "Alexandrite Lamp",
+
+  "enchantment.mccourse.lightning_striker": "Lightning Striker",
 
   "item.mccourse.metal_detector.no_valuables": "No valuables found!",
 

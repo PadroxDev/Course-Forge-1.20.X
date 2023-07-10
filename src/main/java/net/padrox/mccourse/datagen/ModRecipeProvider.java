@@ -7,6 +7,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.padrox.mccourse.MCCourseMod;
@@ -73,8 +74,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" A ")
                 .pattern("FGF")
                 .pattern(" I ")
-                .unlockedBy("has_purified_alexandrite_gem", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.PURIFIED_ALEXANDRITE_GEM.get()).build()))
+                .unlockedBy(getHasName(ModItems.PURIFIED_ALEXANDRITE_GEM.get()), has(ModItems.PURIFIED_ALEXANDRITE_GEM.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.ALEXANDRITE_LAMP.get())
+                .define('R', Items.REDSTONE)
+                .define('A', ModItems.ALEXANDRITE_GEM.get())
+                .define('G', Items.GLASS)
+                .pattern("GRG")
+                .pattern("RAR")
+                .pattern("GRG")
+                .unlockedBy(getHasName(ModItems.ALEXANDRITE_GEM.get()), has(ModItems.ALEXANDRITE_GEM.get()))
                 .save(pWriter);
     }
 

@@ -39,6 +39,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ALEXANDRITE_LEGGINS.get());
                         output.accept(ModItems.ALEXANDRITE_BOOTS.get());
 
+                        output.accept(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
+
                         output.accept(ModBlocks.SOUND_BLOCK.get());
 
                         output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
@@ -70,6 +72,8 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.RAW_ALEXANDRITE_TRAPDOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
+
+                        output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "mccourse:alexandrite_gem"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "GRG",
+    "RAR",
+    "GRG"
+  ],
+  "result": {
+    "item": "mccourse:alexandrite_lamp"
+  },
+  "show_notification": true
+}

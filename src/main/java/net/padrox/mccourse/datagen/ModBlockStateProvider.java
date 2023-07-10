@@ -1,6 +1,9 @@
 package net.padrox.mccourse.datagen;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.padrox.mccourse.MCCourseMod;
@@ -9,6 +12,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import net.padrox.mccourse.block.custom.AlexandriteLampBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -62,6 +66,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockItem(ModBlocks.RAW_ALEXANDRITE_TRAPDOOR, "_bottom");
         blockItem(ModBlocks.ALEXANDRITE_TRAPDOOR, "_bottom");
+
+        customLamp(ModBlocks.ALEXANDRITE_LAMP.get(), AlexandriteLampBlock.CLICKED, "alexandrite_lamp");
     }
 
     private void blockItem(RegistryObject<Block> blockRegistryObject, String appendix) {
@@ -74,5 +80,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void customLamp(Block lamp, BooleanProperty property, String lampName) {
+        getVariantBuilder(lamp).forAllStates(state -> {
+            if(state.getValue(property)) {
+
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll(lampName + "_on",
+                        new ResourceLocation(MCCourseMod.MOD_ID, "block/" + lampName + "_on")))};
+            } else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll(lampName + "_off",
+                        new ResourceLocation(MCCourseMod.MOD_ID, "block/" + lampName + "_off")))};
+            }
+        });
+        simpleBlockItem(lamp, models().cubeAll(lampName + "_on",
+                new ResourceLocation(MCCourseMod.MOD_ID, "block/" + lampName + "_off")));
     }
 }
