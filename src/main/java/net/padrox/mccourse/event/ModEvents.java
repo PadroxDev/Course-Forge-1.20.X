@@ -1,6 +1,11 @@
 package net.padrox.mccourse.event;
 
+import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.server.command.ConfigCommand;
 import net.padrox.mccourse.MCCourseMod;
+import net.padrox.mccourse.command.ReturnHomeCommand;
+import net.padrox.mccourse.command.SetHomeCommand;
 import net.padrox.mccourse.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -41,5 +46,18 @@ public class ModEvents {
                 HARVESTED_BLOCKS.remove(pos);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onCommandsRegister(RegisterCommandsEvent event) {
+        new SetHomeCommand(event.getDispatcher());
+        new ReturnHomeCommand(event.getDispatcher());
+
+        ConfigCommand.register(event.getDispatcher());
+    }
+
+    @SubscribeEvent
+    public static void onPlayerCloned(PlayerEvent.Clone event) {
+        event.getEntity().getPersistentData().putIntArray("mccourse.homepos", event.getOriginal().getPersistentData().getIntArray("mccourse.homepos"));
     }
 }
