@@ -22,6 +22,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ALEXANDRITE_GEM.get());
                         output.accept(ModItems.PURIFIED_ALEXANDRITE_GEM.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
+                        output.accept(ModItems.DATA_TABLET.get());
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.PEAT_BRICK.get());
 
